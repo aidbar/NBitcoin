@@ -31,6 +31,7 @@ Currently supported altcoins are:
 * XDS
 * Althash
 * Neblio
+* Techcoin
 
 ## How to use?
 
