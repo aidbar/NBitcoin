@@ -7,6 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NBitcoin.Altcoins.HashX11;
+/* #if !NO_BC
+using NBitcoin.BouncyCastle.Math;
+using NBitcoin.BouncyCastle.Math.EC;
+#endif*/
+/*#if HAS_SPAN
+#nullable enable
+using NBitcoin.Secp256k1;
+#endif*/
+/*using System.Reflection.Emit;
+using System.Diagnostics.CodeAnalysis; */
 using Xunit;
 using System.IO;
 

@@ -40,6 +40,7 @@
 		<ProjectReference Include="..\NBitcoin\NBitcoin.csproj" />
 		<ProjectReference Include="..\NBitcoin.Altcoins\NBitcoin.Altcoins.csproj" />
 		<ProjectReference Include="..\NBitcoin.TestFramework\NBitcoin.TestFramework.csproj" />
+  	<ProjectReference Include="..\NBitcoin.Secp256k1\NBitcoin.Secp256k1.csproj" />
 		<PackageReference Include="Microsoft.CSharp" Version="4.6.0" />
 		<PackageReference Include="xunit" Version="2.4.1" />
 		<PackageReference Include="xunit.runner.visualstudio" Version="2.4.1">
