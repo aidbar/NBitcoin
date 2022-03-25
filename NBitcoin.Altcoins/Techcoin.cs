@@ -9,7 +9,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 
-namespace NBitcoin.AltCoins
+namespace NBitcoin.Altcoins
 {
 	public class Techcoin : NetworkSetBase
 	{

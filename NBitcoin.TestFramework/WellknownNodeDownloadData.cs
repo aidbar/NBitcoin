@@ -474,19 +474,19 @@ namespace NBitcoin.Tests
 				Version = "22.0.0",
 				Windows = new NodeOSDownloadData()
 				{
-					DownloadLink = "https://cloud.thought.live/s/TNyK7C9MTJipQcg/download",
-					Executable = "techcoin-22.0.0rc3-win64-setup.exe",
-					//Archive = "litecoin-{0}/bin/litecoind.exe",
-					//Hash = "c47b196a45f64dbfc9d13b66b50d4da82a263d95b36577e64b31c37590f718b2"
-				}//,
-				/* Linux = new NodeOSDownloadData()
-				{
-					DownloadLink = "https://download.litecoin.org/litecoin-{0}/linux/litecoin-{0}-x86_64-linux-gnu.tar.gz",
-					Archive = "litecoin-{0}-x86_64-linux-gnu.tar.gz",
-					Executable = "litecoin-{0}/bin/litecoind",
-					Hash = "05f409ee57ce83124f2463a3277dc8d46fca18637052d1021130e4deaca07b3c"
+					DownloadLink = "http://152.228.213.39/techcoin_windows.zip",
+					Executable = "techcoin_windows/bin/techcoind.exe",
+					Archive = "techcoin_windows.zip",
+					Hash = "c47b196a45f64dbfc9d13b66b50d4da82a263d95b36577e64b31c37590f718b2"
 				},
-				Mac = new NodeOSDownloadData()
+				Linux = new NodeOSDownloadData()
+				{
+					DownloadLink = "http://152.228.213.39/techcoin_linux.tar.gz",
+					Archive = "techcoin_linux.tar.gz",
+					Executable = "techcoind",
+					Hash = "05f409ee57ce83124f2463a3277dc8d46fca18637052d1021130e4deaca07b3c"
+				}//,
+				/*Mac = new NodeOSDownloadData()
 				{
 					DownloadLink = "https://download.litecoin.org/litecoin-{0}/osx/litecoin-{0}-osx64.tar.gz",
 					Archive = "litecoin-{0}-osx64.tar.gz",
@@ -494,7 +494,7 @@ namespace NBitcoin.Tests
 				} */
 			};
 
-			public NodeDownloadData v0_15_1 = new NodeDownloadData()
+			/*public NodeDownloadData v0_15_1 = new NodeDownloadData()
 			{
 				Version = "0.15.1",
 				Windows = new NodeOSDownloadData()
@@ -598,7 +598,7 @@ namespace NBitcoin.Tests
 					Hash = "4ce590ecbaecaced7253473bc574a2b70527c9aeb3a3ab33a843ea1c9caf0c86"
 				},
 				UseSectionInConfigFile = true
-			};
+			};*/
 		}
 
 		public class ViacoinNodeDownloadData : NodeDownloadDataBase
