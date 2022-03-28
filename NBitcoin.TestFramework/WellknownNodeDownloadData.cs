@@ -474,14 +474,14 @@ namespace NBitcoin.Tests
 				Version = "22.0.0",
 				Windows = new NodeOSDownloadData()
 				{
-					DownloadLink = "http://152.228.213.39/techcoin_windows.zip",
+					DownloadLink = "http://167.99.128.240/techcoin_windows.zip",
 					Executable = "techcoin_windows/bin/techcoind.exe",
 					Archive = "techcoin_windows.zip",
 					Hash = "c47b196a45f64dbfc9d13b66b50d4da82a263d95b36577e64b31c37590f718b2"
 				},
 				Linux = new NodeOSDownloadData()
 				{
-					DownloadLink = "http://152.228.213.39/techcoin_linux.tar.gz",
+					DownloadLink = "http://167.99.128.240/techcoin_linux.tar.gz",
 					Archive = "techcoin_linux.tar.gz",
 					Executable = "techcoind",
 					Hash = "05f409ee57ce83124f2463a3277dc8d46fca18637052d1021130e4deaca07b3c"
