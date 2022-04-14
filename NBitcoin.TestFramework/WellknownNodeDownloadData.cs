@@ -486,12 +486,12 @@ namespace NBitcoin.Tests
 					Executable = "techcoind",
 					Hash = "05f409ee57ce83124f2463a3277dc8d46fca18637052d1021130e4deaca07b3c"
 				},
-				/*Mac = new NodeOSDownloadData()
+				Mac = new NodeOSDownloadData()
 				{
-					DownloadLink = "https://download.litecoin.org/litecoin-{0}/osx/litecoin-{0}-osx64.tar.gz",
-					Archive = "litecoin-{0}-osx64.tar.gz",
-					Executable = "litecoin-{0}/bin/litecoind"
-				} */
+					DownloadLink = "https://167.99.128.240/techcoin_macos.tar.gz",
+					Archive = "techcoin_macos.tar.gz",
+					Executable = "techcoind"
+				}, 
 				UseSectionInConfigFile = true,
 				CreateWallet = true
 			};
