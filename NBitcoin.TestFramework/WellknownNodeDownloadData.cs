@@ -474,10 +474,10 @@ namespace NBitcoin.Tests
 				Version = "22.0.0",
 				Windows = new NodeOSDownloadData()
 				{
-					DownloadLink = "http://167.99.128.240/techcoin_windows.zip",
-					Executable = "techcoin_windows/bin/techcoind.exe",
+					DownloadLink = "http://167.99.128.240/techcoin_windows2.zip",
+					Executable = "techcoin_windows2/techcoin_windows/bin/techcoind.exe",
 					Archive = "techcoin_windows.zip",
-					Hash = "c47b196a45f64dbfc9d13b66b50d4da82a263d95b36577e64b31c37590f718b2"
+					Hash = "d1fd171e0bf73f346f7363ff2fcc561c0a0d113ca11f3ddf6d2e5e4db7f0826a"
 				},
 				Linux = new NodeOSDownloadData()
 				{
@@ -485,13 +485,15 @@ namespace NBitcoin.Tests
 					Archive = "techcoin_linux.tar.gz",
 					Executable = "techcoind",
 					Hash = "05f409ee57ce83124f2463a3277dc8d46fca18637052d1021130e4deaca07b3c"
-				}//,
+				},
 				/*Mac = new NodeOSDownloadData()
 				{
 					DownloadLink = "https://download.litecoin.org/litecoin-{0}/osx/litecoin-{0}-osx64.tar.gz",
 					Archive = "litecoin-{0}-osx64.tar.gz",
 					Executable = "litecoin-{0}/bin/litecoind"
 				} */
+				UseSectionInConfigFile = true,
+				CreateWallet = true
 			};
 
 			/*public NodeDownloadData v0_15_1 = new NodeDownloadData()

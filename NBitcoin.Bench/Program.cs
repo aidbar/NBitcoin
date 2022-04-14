@@ -9,9 +9,9 @@ namespace NBitcoin.Bench
 		{
 			BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).Run(args);
 
-			//var s = new PSBTSigningBench();
-			//s.Setup();
-			//s.BenchSignPSBT();
+			var s = new PSBTSigningBench();
+			s.Setup();
+			s.BenchSignPSBT();
 
 			//var s = new Serialization();
 			//s.Setup();

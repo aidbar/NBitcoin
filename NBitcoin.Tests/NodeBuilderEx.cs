@@ -70,9 +70,9 @@ namespace NBitcoin.Tests
 
 			//var builder = Create(NodeDownloadData.Bitcoin.v0_19_0_1, caller);
 
-			//var builder = NodeBuilder.Create(NodeDownloadData.Techcoin.v22_0_0, Altcoins.Techcoin.Regtest, caller);
+			var builder = NodeBuilder.Create(NodeDownloadData.Techcoin.v22_0_0, Altcoins.Techcoin.Instance.Regtest, caller, true);
 
-			var builder = Create(NodeDownloadData.Bitcoin.v22_0, caller);
+			//var builder = Create(NodeDownloadData.Bitcoin.v22_0, caller);
 			return builder;
 		}
 
