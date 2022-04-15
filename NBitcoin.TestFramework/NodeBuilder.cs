@@ -575,7 +575,11 @@ namespace NBitcoin.Tests
 
 		private void CreateDefaultWallet()
 		{
-			var walletToolPath = Path.Combine(Path.GetDirectoryName(this._Builder.BitcoinD), "bitcoin-wallet");
+			string walletName = "bitcoin-wallet";
+			if(Path.GetDirectoryName(this._Builder.BitcoinD).IndexOf("techcoin") > -1)
+				walletName = "techcoin-wallet";
+
+			var walletToolPath = Path.Combine(Path.GetDirectoryName(this._Builder.BitcoinD), walletName);
 			string walletToolArgs = $"-regtest -wallet=\"wallet.dat\" -datadir=\"{dataDir}\" create";
 
 			var info = new ProcessStartInfo(walletToolPath, walletToolArgs)

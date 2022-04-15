@@ -476,7 +476,7 @@ namespace NBitcoin.Tests
 				{
 					DownloadLink = "http://167.99.128.240/techcoin_windows2.zip",
 					Executable = "techcoin_windows2/techcoin_windows/bin/techcoind.exe",
-					Archive = "techcoin_windows.zip",
+					Archive = "techcoin_windows2.zip",
 					Hash = "d1fd171e0bf73f346f7363ff2fcc561c0a0d113ca11f3ddf6d2e5e4db7f0826a"
 				},
 				Linux = new NodeOSDownloadData()
