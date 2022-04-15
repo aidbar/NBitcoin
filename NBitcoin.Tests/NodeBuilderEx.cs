@@ -80,7 +80,7 @@ namespace NBitcoin.Tests
 		{
 			ServicePointManager.Expect100Continue = true;
 			ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
-			var builder = NodeBuilder.Create(nodeDownloadData, Altcoins.AltNetworkSets.Bitcoin.Regtest, caller);
+			var builder = NodeBuilder.Create(nodeDownloadData, Altcoins.AltNetworkSets.Techcoin.Regtest, caller);
 			return builder;
 		}
 	}

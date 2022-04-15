@@ -2539,7 +2539,7 @@ namespace NBitcoin
 				catch (Bech32FormatException) { throw; }
 				catch (FormatException) { continue; }
 			}
-			throw new FormatException("Invalid string");
+			throw new FormatException("Invalid string: " + str +", type: " + targetType.FullName);
 		}
 
 		public static IBitcoinString Parse(string str, Network expectedNetwork, Type? targetType = null)
