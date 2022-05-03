@@ -2533,7 +2533,7 @@ namespace NBitcoin
 						candidate = new BitcoinWitScriptAddress(str.ToLowerInvariant(), bytes, this);
 					if (witVersion == 1 && bytes.Length == 32 && type == Bech32Type.TAPROOT_ADDRESS)
 						candidate = new TaprootAddress(str.ToLowerInvariant(), bytes, this);
-					if (candidate != null && targetType.GetTypeInfo().IsAssignableFrom((candidate.GetType().GetTypeInfo())))
+					if (candidate != null && targetType.GetTypeInfo().IsAssignableFrom((candidate.GetType().GetTypeInfo()))) 
 						return candidate;
 				}
 				catch (Bech32FormatException) { throw; }
