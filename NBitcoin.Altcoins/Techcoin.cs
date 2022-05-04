@@ -105,9 +105,9 @@ namespace NBitcoin.Altcoins
 			.AddAlias("mainnet")
 			.AddDNSSeeds(new[]
 			{
-				new DNSSeedData("ariga.Techcoin.io", "ariga.Techcoin.io"),
-				new DNSSeedData("dorado.Techcoin.io", "dorado.Techcoin.io"),
-				new DNSSeedData("block.Techcoin.io", "block.Techcoin.io")
+				new DNSSeedData("178.128.221.177", "178.128.221.177")
+				//new DNSSeedData("dorado.Techcoin.io", "dorado.Techcoin.io"),
+				//new DNSSeedData("block.Techcoin.io", "block.Techcoin.io")
 			})
 			.AddSeeds(new NetworkAddress[0])
 			.SetGenesis("0x00000000324ede63db3fed1baf4c66aac921d3f760ece8c111e9b597ccf34b0a");
@@ -187,8 +187,11 @@ namespace NBitcoin.Altcoins
 			.SetPort(18444)
 			.SetRPCPort(18332)
 			.SetMaxP2PVersion(70208)
-			.SetName("regtest")
+			.SetName("TLC-reg")
+			.AddAlias("TLC-regtest")
+			.AddAlias("Techcoin-reg")
 			.AddAlias("Techcoin-regtest")
+			.SetUriScheme("Techcoin")
 			.AddSeeds(new NetworkAddress[0])
 			.SetGenesis("0x63b08043ab6fddd2535409cfb9da47805e9c42f3f8cb3aa1aaef6619dc683b20");
 			return builder;
