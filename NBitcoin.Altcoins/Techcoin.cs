@@ -4,6 +4,7 @@ using NBitcoin.DataEncoders;
 using NBitcoin.Protocol;
 using NBitcoin.RPC;
 using System;
+using System.Text;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -245,7 +246,7 @@ namespace NBitcoin.Altcoins
 			{
 				new DNSSeedData("178.128.221.177", "178.128.221.177")
 			})
-			.AddSeeds(ToSeed(pnSeed6_test))
+			.AddSeeds(new NetworkAddress[0])
 		   	.SetGenesis("010000000000000000000000000000000000000000000000000000000000000000000000d9ced4ed1130f7b7faad9be25323ffafa33232a17c3edf6cfd97bee6bafbdd97f60ba158f0ff0f1ee17904000101000000010000000000000000000000000000000000000000000000000000000000000000ffffffff4804ffff001d0104404e592054696d65732030352f4f63742f32303131205374657665204a6f62732c204170706c65e280997320566973696f6e6172792c2044696573206174203536ffffffff0100f2052a010000004341040184710fa689ad5023690c80f3a49c8f13f8d45b8c857fbcbc8bc4a8e4d3eb4b10f4d4604fa08dce601aaf0f470216fe1b51850b4acf21b179c45070ac7b03a9ac00000000");
 			return builder;
 		}
@@ -289,10 +290,49 @@ namespace NBitcoin.Altcoins
 			.AddAlias("Techcoin-reg")
 			.AddAlias("Techcoin-regtest")
 			.SetUriScheme("Techcoin")
-			//.AddSeeds(new NetworkAddress[0])
-			.SetGenesis("010000000000000000000000000000000000000000000000000000000000000000000000d9ced4ed1130f7b7faad9be25323ffafa33232a17c3edf6cfd97bee6bafbdd97dae5494dffff7f20000000000101000000010000000000000000000000000000000000000000000000000000000000000000ffffffff4804ffff001d0104404e592054696d65732030352f4f63742f32303131205374657665204a6f62732c204170706c65e280997320566973696f6e6172792c2044696573206174203536ffffffff0100f2052a010000004341040184710fa689ad5023690c80f3a49c8f13f8d45b8c857fbcbc8bc4a8e4d3eb4b10f4d4604fa08dce601aaf0f470216fe1b51850b4acf21b179c45070ac7b03a9ac00000000");
+			.AddSeeds(new NetworkAddress[0]);
+			//.SetGenesis("04c04ee91cba8db0181e6efa9d200cee7aac169eef79524703d996bfde6099094e0a74b5f92e349ef82977570db15f22fffafddbfcf8195139cbc606207ac3869e");
+
+			var genesisTime = Utils.DateTimeToUnixTime(new DateTime(2009, 1, 3, 18, 15, 05, DateTimeKind.Utc));
+			uint genesisNonce = 2083236893;
+			var genesisBits = new Target(new uint256("1d00ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"));
+			var genesisVersion = 1;
+			var genesisReward = Money.Zero;
+
+			var genesis = ComputeGenesisBlock(genesisTime, genesisNonce, genesisBits, genesisVersion, genesisReward);
+			builder.SetGenesis(Encoders.Hex.EncodeData(genesis.ToBytes()));
+
 			return builder;
 		}
+		static Block ComputeGenesisBlock(uint genesisTime, uint genesisNonce, uint genesisBits, int genesisVersion, Money genesisReward)
+		{
+			string pszTimestamp = "CNA 25/Sep/2021 UN redoubles green energy push to save climate, boost electricity";
 
+			Transaction txNew = new Transaction();
+
+			txNew.Version = 1;
+			txNew.Inputs.Add(new TxIn
+			{
+				ScriptSig = new Script(Op.GetPushOp(0), new Op()
+				{
+					Code = (OpcodeType)0x1,
+					PushData = new[] { (byte)42 }
+				}, Op.GetPushOp(Encoding.UTF8.GetBytes(pszTimestamp)))
+			});
+			txNew.Outputs.Add(new TxOut
+			{
+				Value = genesisReward,
+			});
+			var genesis = TechcoinConsensusFactory.Instance.CreateBlock();
+			genesis.Header.BlockTime = Utils.UnixTimeToDateTime(genesisTime);
+			genesis.Header.Bits = genesisBits;
+			genesis.Header.Nonce = genesisNonce;
+			genesis.Header.Version = genesisVersion;
+			genesis.Transactions.Add(txNew);
+			genesis.Header.HashPrevBlock = uint256.Zero;
+			genesis.UpdateMerkleRoot();
+			
+			return genesis;
+		}
 	}
 }
